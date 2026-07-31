@@ -9,7 +9,7 @@ export default function ProfileScreen({ navigation }) {
   return (
     <View>
       <Button
-        title="Logout"
+        title="Logout title"
         onPress={handleLogout}
       />
     </View>
