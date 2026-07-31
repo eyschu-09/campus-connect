@@ -1,0 +1,25 @@
+1.Native 
+// java/kotlin   for android
+// swift for ios
+// issue is two differetn developers are needed.
+
+2.hybrid
+// html , css , js wrapped into mobile screen
+
+3.cross platforms
+// ios/android ---single codebase is used
+Ex: flutter---dart , react Native---js
+what is react Native
+native is an opensourece java
+react is an external javascript library which is used to build web applications
+
+reactnative architecture
+               Reactnative applications
+                
+                javascript code
+
+                reactnative runtime
+
+                native android/ios
+the main components of react native architecture
+1.js code
