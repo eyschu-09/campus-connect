@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
     const validPassword="123456"
     if(email===validEmail && password===validPassword){
         alert("Login successful");
-        navigation.navigate("Home");
+        navigation.navigate("Main");
 
     }
     else{

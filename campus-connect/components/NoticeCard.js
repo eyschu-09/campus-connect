@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import{Ionicons,MaterialIcons} from "@expo/vector-icons";
-
+//https://jsonplaceholder.typicode.com/posts
 export default function NoticeCard() {
+  const [data,setData]=useState([])
+  useEffect(()=>{
   const notices = [
     {
       id: 1,
@@ -51,10 +53,12 @@ export default function NoticeCard() {
       image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8C191JdCh-vLaAF570ZX04NesIpQl7WQUtRcl0pkDuw&s=10"
     },
   ];
+},[]);
+ setData(notices);
 
   return (
     <FlatList
-      data={notices}
+      data={data}
       keyExtractor={(item) => item.id.toString()}
       
       renderItem={({ item }) => (
