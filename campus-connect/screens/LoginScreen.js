@@ -1,15 +1,27 @@
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
-import { useState } from 'react';
-
+import { useState,useEffect } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  useEffect(()=>{checkLogin()
+},[]);
+  const checkLogin = async ()=>{
+    const status=await AsyncStorage.getItem("IsLoggedIn");
+    if(status==="true"){
+      navigation.replace("Main")
+    }
+  }
 
-  function handleLogin() {
+  async function handleLogin() {
     //hardcode the credentials
     const validEmail="student@gmail.com"
     const validPassword="123456"
     if(email===validEmail && password===validPassword){
+      await AsyncStorage.setItem(
+        "IsLoggedIn",
+        "true",
+      )
         alert("Login successful");
         navigation.navigate("Main");
 
